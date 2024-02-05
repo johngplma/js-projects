@@ -48,3 +48,69 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/*
+  Styles
+*/
+:root {
+  --color-primary: #fff;
+  --color-secondary: #160c3d;
+  --color-accent: #522ed7;
+  /* font-size: 14px; */
+}
+
+* {
+  color: var(--color-secondary);
+}
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  width: min(1160px, 100% - 4rem);
+  margin-inline: auto;
+}
+
+nav {
+  margin-bottom: 1rem;
+}
+
+.nav-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding-block: 0.75rem;
+}
+
+#logo,
+#github-link {
+  width: fit-content;
+  height: fit-content;
+}
+
+#logo svg {
+  height: 32px;
+  width: auto;
+}
+
+#github-link {
+  justify-self: end;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 500;
+}
+
+#github-link:hover {
+  text-decoration: underline;
+}
+
+#github-link svg {
+  height: 1.5rem;
+}
