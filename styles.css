@@ -76,7 +76,7 @@ a {
 }
 
 nav {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .nav-wrapper {
@@ -119,6 +119,7 @@ header {
 
 header h1 {
   margin-bottom: 0.5rem;
+  color: var(--color-accent);
 }
 
 .projects {
@@ -129,11 +130,11 @@ header h1 {
 
 .project h1 {
   margin-bottom: 0.75rem;
-  color: var(--color-accent);
+  /* color: var(--color-accent); */
 }
 
 .project-container {
-  width: min(800px, 100% - 4rem);
+  width: min(768px, 100%);
   padding-inline: 1rem;
 }
 
