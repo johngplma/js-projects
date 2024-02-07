@@ -16,8 +16,6 @@
 
 body {
   -webkit-font-smoothing: antialiased;
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
 }
 
 img,
@@ -46,7 +44,8 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* #root,
+/* FOR REACTJS
+#root,
 #__next {
   isolation: isolate;
 } */
@@ -56,14 +55,51 @@ h6 {
   ==========================================
 */
 :root {
-  --color-primary: #fff;
-  --color-secondary: #160c3d;
-  --color-accent: #522ed7;
-  /* font-size: 14px; */
+  /*
+    COLORS FOR LIGHT MODE // UNFINISHED
+  */
+  /* --color-white: #ffffff;
+  --color-dark-900: hsl(210, 4%, 8%);
+  --color-dark-700: hsl(210, 4%, 10%);
+  --color-dark-500: hsl(210, 4%, 15%);
+  --color-dark-300: hsl(210, 4%, 20%);
+  --color-dark-200: hsl(210, 4%, 25%);
+  --color-dark-100: hsl(210, 4%, 30%);
+
+  --color-primary: var(--color-white);
+  --color-secondary: var(--color-dark-700);
+
+  --color-accent-primary: #7041fb;
+
+  --color-accent-green-700: #2aa276;
+  --color-accent-green-500: #32c08c;
+  --color-accent-green-300: #41fab7; */
+
+  --color-dark-900: hsl(210, 4%, 8%);
+  --color-dark-700: hsl(210, 4%, 10%);
+  --color-dark-500: hsl(210, 4%, 15%);
+  --color-dark-300: hsl(210, 4%, 20%);
+  --color-dark-200: hsl(210, 4%, 25%);
+  --color-dark-100: hsl(210, 4%, 30%);
+
+  --color-primary: var(--color-dark-700);
+  --color-secondary: #f2f5f7;
+
+  --color-accent-primary: #7041fb;
+
+  --color-accent-green-700: #2aa276;
+  --color-accent-green-500: #32c08c;
+  --color-accent-green-300: #41fab7;
+
+  --color-white: #ffffff;
 }
 
 * {
   color: var(--color-secondary);
+}
+
+body {
+  background-color: var(--color-primary);
 }
 
 a {
@@ -76,114 +112,156 @@ a {
 }
 
 nav {
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
+
+  .wrapper {
+    padding-block: 2rem;
+  }
 }
 
-.nav-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  padding-block: 0.75rem;
-}
+#logo {
+  svg {
+    height: 1.5rem;
+    width: auto;
 
-#logo,
-#github-link {
-  width: fit-content;
-  height: fit-content;
-}
+    path {
+      fill: var(--color-secondary);
+    }
 
-#logo svg {
-  height: 32px;
-  width: auto;
-}
-
-#github-link {
-  justify-self: end;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  font-weight: 500;
-}
-
-#github-link:hover {
-  text-decoration: underline;
-}
-
-#github-link svg {
-  height: 1.5rem;
+    path:nth-child(-n + 2) {
+      fill: var(--color-accent-primary);
+    }
+  }
 }
 
 header {
-  margin-bottom: 1.5rem;
-}
+  margin-bottom: 4rem;
 
-header h1 {
-  margin-bottom: 0.5rem;
-  color: var(--color-accent);
+  h1 {
+    /* font-size: 1.75rem; */
+    margin-bottom: 0.75rem;
+    color: var(--color-accent-primary);
+  }
 }
 
 .projects {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  .coming-soon {
+    width: min(768px, 100% - 4rem);
+    margin-top: 3rem;
+    font-size: 14px;
+  }
 }
 
-.project h1 {
-  margin-bottom: 0.75rem;
-  /* color: var(--color-accent); */
-}
+.project {
+  h1 {
+    margin-bottom: 0.75rem;
+    position: relative;
+    width: fit-content;
+  }
 
-.project-container {
-  width: min(768px, 100%);
-  padding-inline: 1rem;
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .project-container {
+    width: min(768px, 100%);
+  }
 }
 
 /*
   1. TASKS
-=============================================
+======================================================
 */
-.note {
-  font-size: 14px;
-  margin-bottom: 0.75rem;
+.tasks-container {
+  background-color: var(--color-dark-500);
+  border-radius: 5px;
+  padding: 1rem;
+
+  span {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 0.751rem;
+
+    i {
+      display: block;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .input-field {
+    display: flex;
+    gap: 0.5rem;
+
+    input {
+      /* 6ffc79 */
+      background-color: var(--color-dark-300);
+      border: none;
+      color: var(--color-text);
+      border-radius: 5px;
+      width: 100%;
+      padding: 0.5rem;
+    }
+  }
+
+  .btn {
+    background-color: var(--color-accent-green-500);
+    border: none;
+    color: var(--color-primary);
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+  }
 }
 
-.input-field {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.input-field input {
-  border: 1px solid var(--color-secondary);
-  background-color: var(--color-primary);
-  border-radius: 3px;
-  width: 100%;
-  padding: 0.5rem;
-}
-
-.btn {
-  border: 1px solid var(--color-accent);
-  border-radius: 3px;
-  font-weight: bold;
-  background-color: var(--color-accent);
-  color: var(--color-primary);
-  padding: 0.5rem;
-}
-
-.btn:hover {
-  cursor: pointer;
-}
-
-.btn-add {
-  width: 10rem;
-}
-
-ul {
+.tasks {
   list-style-type: none;
   padding: 0;
+
+  .task {
+    border-bottom: 1px solid var(--color-dark-200);
+    padding: 0.5rem;
+  }
 }
 
-.task {
-  border-bottom: 1px solid #eee;
-  padding: 0.5rem;
+/*
+========================================
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-dark-900: hsl(210, 4%, 8%);
+    --color-dark-700: hsl(210, 4%, 10%);
+    --color-dark-500: hsl(210, 4%, 15%);
+    --color-dark-300: hsl(210, 4%, 20%);
+    --color-dark-200: hsl(210, 4%, 25%);
+    --color-dark-100: hsl(210, 4%, 30%);
+
+    --color-primary: var(--color-dark-700);
+    --color-secondary: #f2f5f7;
+
+    --color-accent-primary: #7041fb;
+
+    --color-accent-green-700: #2aa276;
+    --color-accent-green-500: #32c08c;
+    --color-accent-green-300: #41fab7;
+
+    --color-white: #ffffff;
+  }
+
+  .btn {
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    color: var(--color-secondary);
+  }
+
+  #logo svg * {
+    fill: var(--color-secondary);
+  }
 }

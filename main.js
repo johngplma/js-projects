@@ -8,7 +8,7 @@ console.log('Welcome to JS Projects.');
  */
 const addBtn = document.querySelector('.btn-add');
 const input = document.querySelector('#input');
-const tasksContainer = document.querySelector('#tasks');
+const tasksContainer = document.querySelector('.tasks');
 
 // get input value
 let task = input.value;
