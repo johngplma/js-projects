@@ -44,7 +44,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* FOR REACTJS
+/* REACT JS
 #root,
 #__next {
   isolation: isolate;
@@ -55,51 +55,43 @@ h6 {
   ==========================================
 */
 :root {
-  /*
-    COLORS FOR LIGHT MODE // UNFINISHED
-  */
-  /* --color-white: #ffffff;
-  --color-dark-900: hsl(210, 4%, 8%);
-  --color-dark-700: hsl(210, 4%, 10%);
-  --color-dark-500: hsl(210, 4%, 15%);
-  --color-dark-300: hsl(210, 4%, 20%);
-  --color-dark-200: hsl(210, 4%, 25%);
-  --color-dark-100: hsl(210, 4%, 30%);
+  /* Hues */
+  --hue-base: 255.56;
 
-  --color-primary: var(--color-white);
-  --color-secondary: var(--color-dark-700);
+  /* Dark colors */
+  --color-dark-500: hsl(var(--hue-base), 5%, 9%);
+  --color-dark-300: hsl(var(--hue-base), 5%, 16%);
+  --color-dark-200: hsl(var(--hue-base), 5%, 21%);
 
-  --color-accent-primary: #7041fb;
+  /* Light colors */
+  --color-light-500: hsl(var(--hue-base), 5%, 98%);
+  --color-light-300: hsl(var(--hue-base), 4%, 88%);
+  --color-light-200: hsl(var(--hue-base), 5%, 98%);
 
-  --color-accent-green-700: #2aa276;
-  --color-accent-green-500: #32c08c;
-  --color-accent-green-300: #41fab7; */
+  /* Accent colors */
+  --color-accent-primary-700: hsl(var(--hue-base), 60%, 46%);
+  --color-accent-primary-500: hsl(var(--hue-base), 100%, 68%);
+  --color-accent-primary-300: hsl(var(--hue-base), 100%, 78%);
+  --color-accent-primary-200: hsl(var(--hue-base), 100%, 82%);
+  --color-accent-primary-100: hsl(var(--hue-base), 100%, 50%);
 
-  --color-dark-900: hsl(210, 4%, 8%);
-  --color-dark-700: hsl(210, 4%, 10%);
-  --color-dark-500: hsl(210, 4%, 15%);
-  --color-dark-300: hsl(210, 4%, 20%);
-  --color-dark-200: hsl(210, 4%, 25%);
-  --color-dark-100: hsl(210, 4%, 30%);
+  /* Primary colors */
+  --color-primary-500: var(--color-dark-500);
+  --color-primary-300: var(--color-dark-300);
+  --color-primary-200: var(--color-dark-200);
 
-  --color-primary: var(--color-dark-700);
-  --color-secondary: #f2f5f7;
-
-  --color-accent-primary: #7041fb;
-
-  --color-accent-green-700: #2aa276;
-  --color-accent-green-500: #32c08c;
-  --color-accent-green-300: #41fab7;
-
-  --color-white: #ffffff;
+  /* Secondary colors */
+  --color-secondary-500: var(--color-light-500);
+  --color-secondary-300: var(--color-light-300);
+  --color-secondary-200: var(--color-light-200);
 }
 
 * {
-  color: var(--color-secondary);
+  color: var(--color-secondary-500);
 }
 
 body {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-500);
 }
 
 a {
@@ -125,11 +117,11 @@ nav {
     width: auto;
 
     path {
-      fill: var(--color-secondary);
+      fill: var(--color-secondary-500);
     }
 
     path:nth-child(-n + 2) {
-      fill: var(--color-accent-primary);
+      fill: var(--color-accent-primary-500);
     }
   }
 }
@@ -140,7 +132,7 @@ header {
   h1 {
     /* font-size: 1.75rem; */
     margin-bottom: 0.75rem;
-    color: var(--color-accent-primary);
+    color: var(--color-accent-primary-500);
   }
 }
 
@@ -177,7 +169,7 @@ header {
 ======================================================
 */
 .tasks-container {
-  background-color: var(--color-dark-500);
+  background-color: var(--color-primary-300);
   border-radius: 5px;
   padding: 1rem;
 
@@ -195,12 +187,13 @@ header {
   .input-field {
     display: flex;
     gap: 0.5rem;
+    margin-bottom: 0.75rem;
 
     input {
       /* 6ffc79 */
-      background-color: var(--color-dark-300);
+      background-color: var(--color-primary-200);
       border: none;
-      color: var(--color-text);
+      color: var(--color-secondary-500);
       border-radius: 5px;
       width: 100%;
       padding: 0.5rem;
@@ -208,9 +201,9 @@ header {
   }
 
   .btn {
-    background-color: var(--color-accent-green-500);
+    background-color: var(--color-accent-primary-700);
     border: none;
-    color: var(--color-primary);
+    color: var(--color-light-500);
     border-radius: 5px;
     font-weight: bold;
     padding: 0.5rem 1.5rem;
@@ -226,42 +219,33 @@ header {
   padding: 0;
 
   .task {
-    border-bottom: 1px solid var(--color-dark-200);
+    border-bottom: 1px solid var(--color-primary-200);
     padding: 0.5rem;
+  }
+
+  .task:last-child {
+    margin-bottom: 0.375rem;
   }
 }
 
 /*
-========================================
+=======================================
  */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --color-dark-900: hsl(210, 4%, 8%);
-    --color-dark-700: hsl(210, 4%, 10%);
-    --color-dark-500: hsl(210, 4%, 15%);
-    --color-dark-300: hsl(210, 4%, 20%);
-    --color-dark-200: hsl(210, 4%, 25%);
-    --color-dark-100: hsl(210, 4%, 30%);
+    /* Primary colors */
+    --color-primary-500: var(--color-light-500);
+    --color-primary-300: var(--color-light-300);
+    --color-primary-200: var(--color-light-200);
 
-    --color-primary: var(--color-dark-700);
-    --color-secondary: #f2f5f7;
+    /* Secondary colors */
+    --color-secondary-500: var(--color-dark-500);
+    --color-secondary-300: var(--color-dark-300);
+    --color-secondary-200: var(--color-dark-200);
 
-    --color-accent-primary: #7041fb;
-
-    --color-accent-green-700: #2aa276;
-    --color-accent-green-500: #32c08c;
-    --color-accent-green-300: #41fab7;
-
-    --color-white: #ffffff;
-  }
-
-  .btn {
-    background-color: var(--color-accent);
-    border: 1px solid var(--color-accent);
-    color: var(--color-secondary);
-  }
-
-  #logo svg * {
-    fill: var(--color-secondary);
+    /* Accents */
+    --color-accent-primary-700: hsl(var(--hue-base), 80%, 55%);
+    --color-accent-primary-500: hsl(var(--hue-base), 92%, 52%);
+    --color-accent-primary-300: hsl(var(--hue-base), 100%, 78%);
   }
 }
